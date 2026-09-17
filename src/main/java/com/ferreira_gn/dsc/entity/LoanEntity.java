@@ -28,7 +28,7 @@ public class LoanEntity {
   private Long id;
 
   @ManyToOne
-  @JoinColumn(name = "usuarior_id")
+  @JoinColumn(name = "usuario_id")
   private UserEntity user;
 
   private Date dataEmprestimo;
