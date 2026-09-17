@@ -13,7 +13,7 @@ public interface BookRepository extends JpaRepository<BookEntity, Long> {
 
   public List<BookEntity> findByCategoriaNome(String nome);
 
-  public List<BookEntity> findByAutorNomeOrderByAnoPublicacaoAsc(String nome);
+  public List<BookEntity> findByAutoresNomeOrderByAnoPublicacaoAsc(String nome);
 
   @Query(
     """
@@ -21,7 +21,7 @@ public interface BookRepository extends JpaRepository<BookEntity, Long> {
             l.categoria.nome,
             COUNT(l)
         )
-        FROM Livro l
+        FROM BookEntity l
         GROUP BY l.categoria.nome
         ORDER BY COUNT(l) DESC
     """

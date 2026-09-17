@@ -8,7 +8,7 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface LoanRepository extends JpaRepository<LoanEntity, Long> {
-  public List<LoanEntity> findByUsuarioIdAndStatus(Long usuarioId, LoanState status);
+  public List<LoanEntity> findByUserAndStatus(Long usuarioId, LoanState status);
 
   public List<LoanEntity> findByDataDevolucaoPrevistaBeforeAndStatus(
       LocalDate data,
